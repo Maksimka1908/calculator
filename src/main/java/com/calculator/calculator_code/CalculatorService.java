@@ -30,7 +30,10 @@ public class CalculatorService {
 
     public String calculationDivide(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
         float result;
-        result = (float) (( num1 * 1.0)/ num2);
+        result = (float) ((num1 * 1.0) / num2);
+        if (num2 == 0) {
+            return "<h4 style=\"color: red;\">Делить на ноль нельзя</h4>";
+        }
         return num1 + "/" + num2 + "=" + result;
     }
 }
